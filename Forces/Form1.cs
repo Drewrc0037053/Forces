@@ -39,6 +39,22 @@ namespace Forces
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //declare values from textboxes
+            double Force, Angle;
+
+            //Read values from textboxes
+            try
+            {
+                Force = double.Parse(textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Type a number in the Force Box, you doofus!");
+                Force = 0.0;
+            }
+
+            Angle = double.Parse(textBox2.Text);
+
             // Parse means to read this text as a number
             double Force = double.Parse(textBox1.Text);
             double Angle = double.Parse(textBox2.Text);
