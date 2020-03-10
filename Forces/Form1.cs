@@ -39,7 +39,7 @@ namespace Forces
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //declare values from textboxes
+            //declare values from textboxes / declare variables for Force and Angle      
             double Force, Angle;
 
             //Read values from textboxes
@@ -53,11 +53,16 @@ namespace Forces
                 Force = 0.0;
             }
 
-            Angle = double.Parse(textBox2.Text);
+            try
+            {
+                Angle = double.Parse(textBox2.Text);
+            }
 
-            // Parse means to read this text as a number
-            double Force = double.Parse(textBox1.Text);
-            double Angle = double.Parse(textBox2.Text);
+            catch
+            {
+                MessageBox.Show("Type a number in the Angle Box, you doofus!");
+                Angle = 0.0;
+            }
 
             //Calculate Fx and Fy
             double Fx = Force * cos(Angle);
